@@ -16,6 +16,14 @@ This React-based interactive memory card game allows players to match pairs of c
 - CSS
 - Vite
 
+### Live Preview
+
+[Netlify](https://amal-memory-card-game.netlify.app)
+
+### Source Code
+
+[GitHub](https://github.com/1Amal/react-memory-card-game)
+
 ## Getting Started
 
 ### Prerequisites
@@ -51,4 +59,4 @@ npm install
 npm run dev
 ```
 
-### Live Preview
+
