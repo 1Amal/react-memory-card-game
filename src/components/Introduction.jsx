@@ -1,3 +1,5 @@
+import "../styles/main-style-sheet.css";
+
 export default function Introduction ()
 {
     return (
