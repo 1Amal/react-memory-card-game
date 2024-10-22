@@ -69,29 +69,39 @@ createRoot(document.getElementById("root")).render(
 
     function CardPlacement ()
     {
-      CardOder = RandomCardSelection()
+      CardOrder = RandomCardSelection()
 
 
-      <Card1-Component/>
-      <Card2-Component/>
-      <Card3-Component/>
-      <Card4-Component/>
-      <Card5-Component/>
+      <GridPosition0-Component card0Prop={CardOrder[0]}/>
+      <GridPosition1-Component card1Prop={CardOrder[1]/>
+      <GridPosition2-Component card2Prop={CardOrder[2]/>
+      <GridPosition3-Component card3Prop={CardOrder[3]/>
+      <GridPosition4-Component card4Prop={CardOrder[4]/>
 
       set userSelection=Null
       set currentScore=0
     }
 />
 
-<Card-Component
-    function Card()
+<GridPosition1-Component
+    function GridPosition1({card1Prop})
       {
+        GridPosition1Details=fetchImage();
+
+        imageUrl=GridPosition1Details[card1Prop].imageUrl
+        imageTitle=GridPosition1Details[card1Prop].ImageTitle
+
+        ImageToDisplay=imageUrl
+        ImageTitle=imageTitle
 
       }
 
     function fetchImage()
       {
       imageDataObject = [{cardId:"1", imageId:"",imageUrl:"", ImageTitle:""},...]
+
+
+      return imageDataObject
 
       }
 
@@ -100,12 +110,12 @@ createRoot(document.getElementById("root")).render(
 <ScoreBoard-Component
     function ScoreBoard()
     {
-
-      At the start of the game initialize an empty object or an array for userSelections choice savings
-      scoreBoard={Current Score:0,Highest Score}
+      scoreObject={currentScore:"",highestScore} // At the start of the game initialize an empty object or an array for userSelections choice savings
+    
 
     }
 
+     
 
 
 />
