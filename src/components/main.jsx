@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client";
 import ScoreBoard from "./ScoreBoard.jsx";
 import Introduction from "./Introduction.jsx";
 import CardsContainer from "./CardsContainer.jsx";
+import GameLogic from "./GameLogic.jsx";
 
 import "../styles/main-style-sheet.css";
 
@@ -13,7 +14,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ScoreBoard currentScore={2} bestScore={3} />
     <Introduction />
+    <GameLogic />
     <CardsContainer />
+
     {/* <App /> */}
   </StrictMode>
 );
