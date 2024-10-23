@@ -34,15 +34,64 @@ createRoot(document.getElementById("root")).render(
 // Everytime a new card is clicked this card will need to be compared with the previously user recorded cards
 // If this card is within the user clicked object or array current score will be reset then
 
-
 /* 
 *** Pseudo code ***
+setStates: When User clicks on a card
+useEffect: Used when Giphy API calls are made
+
 
 <MainComponent
-  <ScoreBoard-Component
+  <ScoreBoard-Component/>
   <Introduction-Component/>
   <CardContainer-Component/>
 
+/>
+
+<GameLogic-Component
+      imageDataObject = [{cardId:"1", imageId:"",imageUrl:"", ImageTitle:""},...]
+
+      scoreObject={currentScore:"",highestScore} // At the start of the game initialize an empty object or an array for userSelections choice savings
+
+      userSelectionObject={firstClickID,secondClickID,...}
+
+    function GameLogicMain()
+      {
+          compare each value in userSelectionObject to value sent by ListenToClicks()
+              IF userSelectionObject.values===imageId 
+                THEN
+          
+                  IF scoreObject.currentScore > scoreObject.highestScore
+                    THEN scoreObject.highestScore=currentScore
+                         scoreObject.currentScore=0
+                    ELSE 
+                        scoreObject.currentScore=0
+                    
+              ELSE 
+                  scoreObject.currentScore=+1
+              
+          RETURN <ScoreBoard-Component scoreUpdate={scoreObject}/>
+
+    }
+
+    function fetchImage(imageRequired)
+      {
+      
+      fetchedImage=GIPHY API Call (imageRequired) // Use the GIPHY APi to call up the image from either the image URL or Image ID
+
+      return fetchedImage
+
+      }
+
+    function ListenToClicks()
+    {
+      LISTEN for User Clicks
+        IF clicked on card
+         THEN RETURN GameLogicMain(imageID)
+        
+        ELSE
+          DO NOTHING
+        
+    }
 />
 
 <Introduction-Component
@@ -54,17 +103,20 @@ createRoot(document.getElementById("root")).render(
 
 <CardContainer-Component
 
+  i=0
+
     function RandomCardSelection()
       {
-        currentIndexNo=0;
-        Each time this function is called Step via the following array i.e. index0, index1,..., index5, index0
-        [1,2,3,4,5],
-        [2,3,4,5,1],
-        [3,4,5,1,2],
-        [4,5,1,2,3],
-        [5,1,2,3,4]
-
-        return currentIndexNo;
+            randomNumberObject={[1,2,3,4,5],
+                                [2,3,4,5,1],
+                                [3,4,5,1,2],
+                                [4,5,1,2,3],
+                                [5,1,2,3,4]}
+        COUNTER (From 0 to 4) counterValue=i 
+        
+        
+        return randomNumberObject[i]
+   
       }
 
     function CardPlacement ()
@@ -78,48 +130,100 @@ createRoot(document.getElementById("root")).render(
       <GridPosition3-Component card3Prop={CardOrder[3]/>
       <GridPosition4-Component card4Prop={CardOrder[4]/>
 
-      set userSelection=Null
-      set currentScore=0
     }
 />
 
-<GridPosition1-Component
-    function GridPosition1({card1Prop})
+<GridPosition0-Component
+    function GridPosition0({card0Prop})
       {
-        GridPosition1Details=fetchImage();
+        imageUrl=imageDataObject.[card0Prop].imageUrl
+        imageTitle=imageDataObject[card0Prop].ImageTitle
 
-        imageUrl=GridPosition1Details[card1Prop].imageUrl
-        imageTitle=GridPosition1Details[card1Prop].ImageTitle
-
-        ImageToDisplay=imageUrl
+        ImageToDisplay=fetchImage(imageUrl)
         ImageTitle=imageTitle
 
       }
 
-    function fetchImage()
-      {
-      imageDataObject = [{cardId:"1", imageId:"",imageUrl:"", ImageTitle:""},...]
-
-
-      return imageDataObject
-
-      }
 
 />
 
+*****Alternative Card Shuffle Algo****
+      <CardContainer
+
+        function randomCardSelection()
+              {
+                     
+                  RETURN CardOrder(Number between 0 and 4)
+              }
+
+
+
+
+          IF CardOrder=0
+            THEN
+                <Card1/>
+                <Card2/>
+                <Card3/>
+                <Card4/>
+                <Card5/>
+
+          ELSE IF CardOrder=1
+                <Card2/>
+                <Card3/>
+                <Card4/>
+                <Card5/>
+                <Card1/>
+
+          ELSE IF CardOrder=2
+                <Card3/>
+                <Card4/>
+                <Card5/>
+                <Card1/>
+                <Card2/>
+
+          ELSE IF CardOrder=3
+                <Card4/>
+                <Card5/>
+                <Card1/>
+                <Card2/>
+                <Card3/>
+
+          ELSE IF CardOrder=4
+                <Card5/>      
+                <Card1/>
+                <Card2/>
+                <Card3/>
+                <Card4/>
+      
+      />
+
+      <Card1
+          <GridPosition0-Component
+              function GridPosition0({card0Prop})
+                {
+                  imageUrl=imageDataObject.[card0Prop].imageUrl
+                  imageTitle=imageDataObject[card0Prop].ImageTitle
+
+                  ImageToDisplay=fetchImage(imageUrl)
+                  ImageTitle=imageTitle
+
+                }
+
+
+      />
+
+
+
 <ScoreBoard-Component
-    function ScoreBoard()
+    function ScoreBoard({scoreUpdate})
     {
-      scoreObject={currentScore:"",highestScore} // At the start of the game initialize an empty object or an array for userSelections choice savings
-    
+
+    return {scoreUpdate.highestScore} {scoreUpdate.currentScore}
 
     }
 
      
-
-
 />
 
 
 */
-
