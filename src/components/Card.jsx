@@ -1,4 +1,15 @@
 export default function Card() {
+  const fetchedImage2 =
+    "https://media1.giphy.com/media/rIq6ASPIqo2k0/giphy.gif?cid=cfdad64aqw073qig3wpx2dr0xin5g47sxnua9eg9uwupolsl&ep=v1_gifs_translate&rid=giphy.gif&ct=g";
+
+  function testImage() {
+    const fetchedImage =
+      "https://media1.giphy.com/media/rIq6ASPIqo2k0/giphy.gif?cid=cfdad64aqw073qig3wpx2dr0xin5g47sxnua9eg9uwupolsl&ep=v1_gifs_translate&rid=giphy.gif&ct=g";
+
+    console.log(fetchedImage);
+    <img src="https://media1.giphy.com/media/rIq6ASPIqo2k0/giphy.gif?cid=cfdad64aqw073qig3wpx2dr0xin5g47sxnua9eg9uwupolsl&ep=v1_gifs_translate&rid=giphy.gif&ct=g" />;
+    return fetchedImage;
+  }
   return (
     <div className="projectCardsContainer">
       <div className="projectDiv">
@@ -7,6 +18,10 @@ export default function Card() {
           src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmcwZHU0YWR0eWM0anIwenp3ZTRpc2FwZHBrYnlhZzJ5dTFqbjhzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13FrpeVH09Zrb2/giphy.gif"
           alt="CSS"
         />
+
+        {/* <img src={()=>testImage()} alt="Test Image"/>
+         */}
+
       </div>
 
       {/* <div className="projectDiv">
