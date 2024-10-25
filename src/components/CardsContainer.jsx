@@ -13,40 +13,34 @@ export default function CardsContainer({ FetchImageFunction }) {
   ];
 
   return (
-    <div className="projectCardsContainer">
-      <h1>Select Cards Below</h1>
+    <div className="projectsContainer">
+      <div className="projectDiv">
+        <Card
+          FetchImageFunction={FetchImageFunction}
+          cardName="JavaScript"
+          URL={imageURL[0].image1}
+        />
+      </div>
 
-      <Card
-        FetchImageFunction={FetchImageFunction}
-        cardName="JavaScript"
-        URL={imageURL[0].image1}
-      />
+      <div className="projectDiv">
+        <Card
+          FetchImageFunction={FetchImageFunction}
+          cardName="HTML"
+          URL={imageURL[1].image2}
+        />
+      </div>
 
-      <Card
-        FetchImageFunction={FetchImageFunction}
-        cardName="HTML"
-        URL={imageURL[1].image2}
-      />
-      <Card FetchImageFunction={FetchImageFunction} cardName="CSS" />
-      <Card FetchImageFunction={FetchImageFunction} cardName="React" />
-      <Card FetchImageFunction={FetchImageFunction} cardName="Git" />
+      <div className="projectDiv">
+        <Card FetchImageFunction={FetchImageFunction} cardName="CSS" />
+      </div>
 
-      {/* <div className="projectDiv">
-      <h1>Container 1</h1>
-        <Card FetchImageFunction={FetchImageFunction} />
-        <Card FetchImageFunction={FetchImageFunction} cardName="JavaScript"/>
-        
-        
-      </div> */}
+      <div className="projectDiv">
+        <Card FetchImageFunction={FetchImageFunction} cardName="React" />
+      </div>
 
-      {/* <div className="projectDiv">
-      <h1>Container 2</h1>
-
-      <Card FetchImageFunction={FetchImageFunction} cardName="HTML"/>
-
-
-  
-      </div> */}
+      <div className="projectDiv">
+        <Card FetchImageFunction={FetchImageFunction} cardName="Git" />
+      </div>
     </div>
   );
 }

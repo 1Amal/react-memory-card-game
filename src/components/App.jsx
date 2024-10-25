@@ -10,7 +10,7 @@ import "../styles/main-style-sheet.css";
 
 function App({ currentScore }) {
   return (
-    <div>
+    <div className="mainWebsiteGridContainer" >
       <GameLogic />
     </div>
   );
