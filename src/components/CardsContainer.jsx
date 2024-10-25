@@ -4,15 +4,11 @@ export default function CardsContainer({ FetchImageFunction }) {
   return (
     <div className="projectsContainer">
       <div className="projectDiv">
-        <Card CardId={0} FetchImageFunction={FetchImageFunction} />
-      </div>
-
-      <div className="projectDiv">
         <Card CardId={1} FetchImageFunction={FetchImageFunction} />
       </div>
 
       <div className="projectDiv">
-        <Card CardId={2} FetchImageFunction={FetchImageFunction} />
+        <Card CardId={0} FetchImageFunction={FetchImageFunction} />
       </div>
 
       <div className="projectDiv">
@@ -21,6 +17,10 @@ export default function CardsContainer({ FetchImageFunction }) {
 
       <div className="projectDiv">
         <Card CardId={4} FetchImageFunction={FetchImageFunction} />
+      </div>
+
+      <div className="projectDiv">
+        <Card CardId={2} FetchImageFunction={FetchImageFunction} />
       </div>
     </div>
   );
