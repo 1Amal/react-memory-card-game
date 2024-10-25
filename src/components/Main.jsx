@@ -1,23 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-// import App from './App.jsx'
+
 // import './index.css'
 
 import ScoreBoard from "./ScoreBoard.jsx";
 import Introduction from "./Introduction.jsx";
 import CardsContainer from "./CardsContainer.jsx";
 import GameLogic from "./GameLogic.jsx";
+import App from "./App.jsx";
 
 import "../styles/main-style-sheet.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ScoreBoard currentScore={2} bestScore={3} />
-    <Introduction />
-    <GameLogic />
-    <CardsContainer />
-
-    {/* <App /> */}
+    <App />
   </StrictMode>
 );
 
