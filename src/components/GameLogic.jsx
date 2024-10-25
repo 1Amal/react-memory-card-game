@@ -11,15 +11,12 @@ import Card from "./Card.jsx";
 export default function GameLogic() {
   const [fetchedImage, setFetchedImage] = useState("");
 
+  const scoreBoardObject = [{ currentScore: "" }, { bestScore: "" }];
+  const userSelectionObject = ["firstClickID", "SecondClick"];
+
   async function FetchImage(imageRequired) {
-    const imageIDCSS = "fsEaZldNC8A1PJ3mwp";
-    const imageIDHTML = "XAxylRMCdpbEWUAvr8";
-    const ImageIDJS = "ln7z2eWriiQAllfVcn";
-    const ImageIDReact = "eNAsjO55tPbgaor7ma";
-    const ImageIDGit = "kH1DBkPNyZPOk0BxrM";
+    let imageID = "kH1DBkPNyZPOk0BxrM";
 
-
-    let imageID = imageRequired;
     fetch(
       `https://api.giphy.com/v1/gifs/${imageID}?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&rating=g`,
       {
@@ -40,10 +37,10 @@ export default function GameLogic() {
   }
   return (
     <div>
-      {/* <h1>Game Logic Component</h1> */}
-      
+      <h1>Game Logic Component</h1>
+
       {/* <button onClick={() => FetchImage()}>Fetch Image</button>
-      <img src={fetchedImage} alt="Fetched Image" /> */}
+      <img src={fetchedImage} alt="Fetched Image" />  */}
 
       <ScoreBoard currentScore={1} />
       <Introduction />
