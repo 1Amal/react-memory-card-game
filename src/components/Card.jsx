@@ -6,27 +6,37 @@ export default function Card({ FetchImageFunction, CardId }) {
     {
       imageId: "ln7z2eWriiQAllfVcn",
       imageName: "JavaScript",
-      URL: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw1NTB0aHJlMGZmcmRzNmQyN2NjZWh1MHN4aWVkcHk5OWphMmsxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ln7z2eWriiQAllfVcn/giphy.webp",
+      backupURL:
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWw1NTB0aHJlMGZmcmRzNmQyN2NjZWh1MHN4aWVkcHk5OWphMmsxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ln7z2eWriiQAllfVcn/giphy.webp",
+      giphyFetchedURL: "",
     },
     {
       imageId: "XAxylRMCdpbEWUAvr8",
       imageName: "HTML",
-      URL: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWZxbm9kNDduNmN3NHI3eTQxdGJ2M3NqNjNhOGFtOThpOG15eHNkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XAxylRMCdpbEWUAvr8/giphy.webp",
+      backupURL:
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWZxbm9kNDduNmN3NHI3eTQxdGJ2M3NqNjNhOGFtOThpOG15eHNkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XAxylRMCdpbEWUAvr8/giphy.webp",
+      giphyFetchedURL: "",
     },
     {
       imageId: "fsEaZldNC8A1PJ3mwp",
       imageName: "CSS",
-      URL: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXQzYnR6bGx0MG9lYXMxMmw3d3k1amJnZHFtMWlkdzR0eDczcjg5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fsEaZldNC8A1PJ3mwp/giphy.webp",
+      backupURL:
+        "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXQzYnR6bGx0MG9lYXMxMmw3d3k1amJnZHFtMWlkdzR0eDczcjg5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fsEaZldNC8A1PJ3mwp/giphy.webp",
+      giphyFetchedURL: "",
     },
     {
       imageId: "eNAsjO55tPbgaor7ma",
       imageName: "React",
-      URL: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjl3ZmVhN2dra3Rwb3U0ZHV4d2ozOTdldG10aHRsNGVlZDVpbmRpeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNAsjO55tPbgaor7ma/giphy.webp",
+      backupURL:
+        "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjl3ZmVhN2dra3Rwb3U0ZHV4d2ozOTdldG10aHRsNGVlZDVpbmRpeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eNAsjO55tPbgaor7ma/giphy.webp",
+      giphyFetchedURL: "",
     },
     {
       imageId: "kH1DBkPNyZPOk0BxrM",
       imageName: "Git",
-      URL: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzJuZjV1Y3lxcTgzNjY3ZnBudjdmaTE1ZmlyMTZ1MWR3cnB6cjA2eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kH1DBkPNyZPOk0BxrM/giphy.webp",
+      backupURL:
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzJuZjV1Y3lxcTgzNjY3ZnBudjdmaTE1ZmlyMTZ1MWR3cnB6cjA2eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kH1DBkPNyZPOk0BxrM/giphy.webp",
+      giphyFetchedURL: "",
     },
   ];
 
@@ -36,7 +46,7 @@ export default function Card({ FetchImageFunction, CardId }) {
   return (
     <div>
       <img
-        src={giphyImageIDObject[CardId]["URL"]}
+        src={giphyImageIDObject[CardId]["backupURL"]}
         alt={giphyImageIDObject[CardId]["imageName"]}
         className="imageSize"
       />
