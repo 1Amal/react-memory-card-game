@@ -18,6 +18,7 @@ export default function GameLogic() {
     const ImageIDReact = "eNAsjO55tPbgaor7ma";
     const ImageIDGit = "kH1DBkPNyZPOk0BxrM";
 
+
     let imageID = imageRequired;
     fetch(
       `https://api.giphy.com/v1/gifs/${imageID}?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&rating=g`,
@@ -40,13 +41,13 @@ export default function GameLogic() {
   return (
     <div>
       {/* <h1>Game Logic Component</h1> */}
-      {/* 
-      <button onClick={() => FetchImage()}>Fetch Image</button>
+      
+      {/* <button onClick={() => FetchImage()}>Fetch Image</button>
       <img src={fetchedImage} alt="Fetched Image" /> */}
 
       <ScoreBoard currentScore={1} />
       <Introduction />
-      <CardsContainer imageTestData={FetchImage} />
+      <CardsContainer FetchImageFunction={FetchImage} />
     </div>
   );
 }
