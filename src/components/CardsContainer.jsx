@@ -9,8 +9,11 @@ export default function CardsContainer({ FetchImageFunction }) {
     D: 3,
     E: 4,
   });
+
   let randomNumber = Math.floor(Math.random()*(6-1)+1);
   console.log(randomNumber)
+
+  
   function randomCardSelection() {
 
 
