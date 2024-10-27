@@ -46,6 +46,7 @@ export default function Card({ FetchImageFunction, CardId }) {
   return (
     <div>
       <img
+        id={giphyImageIDObject[CardId]["giphyImageId"]}
         src={giphyImageIDObject[CardId]["backupURL"]}
         alt={giphyImageIDObject[CardId]["imageName"]}
         className="imageSize"
