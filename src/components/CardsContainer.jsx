@@ -10,13 +10,14 @@ export default function CardsContainer({ FetchImageFunction }) {
     E: 4,
   });
 
-  let randomNumber = Math.floor(Math.random()*(6-1)+1);
-  console.log(randomNumber)
+  function cardClickedEvent(cardName) {
+    // document.querySelector("#Card1").addEventListener("click", alert("Clicked"));
+    alert(cardName);
+    randomCardSelection();
+  }
 
-  
   function randomCardSelection() {
-
-
+    let randomNumber = Math.floor(Math.random() * (6 - 1) + 1);
     if (randomNumber == 1) {
       setCardIDRandomObject({
         ...CardIDRandomObject,
@@ -26,9 +27,7 @@ export default function CardsContainer({ FetchImageFunction }) {
         D: 3,
         E: 4,
       });
-    }
-
-    else if (randomNumber == 2) {
+    } else if (randomNumber == 2) {
       setCardIDRandomObject({
         ...CardIDRandomObject,
         A: 1,
@@ -65,46 +64,67 @@ export default function CardsContainer({ FetchImageFunction }) {
         E: 3,
       });
     }
-
-    console.log(CardIDRandomObject);
   }
   return (
     <div className="projectsContainer">
       <button onClick={() => randomCardSelection()}>Change Cards</button>
-      <h1>{randomNumber}</h1>
-      <div className="projectDiv Card1">
+      {/* <h1>{randomNumber}</h1> */}
+      <div
+        className="projectDiv"
+        id="Card1"
+        onClick={() => cardClickedEvent(CardIDRandomObject["A"])}
+      >
         <Card
           CardId={CardIDRandomObject["A"]}
           FetchImageFunction={FetchImageFunction}
         />
       </div>
 
-      <div className="projectDiv Card2">
+      <div
+        className="projectDiv"
+        id="Card2"
+        onClick={() => cardClickedEvent(CardIDRandomObject["B"])}
+      >
         <Card
           CardId={CardIDRandomObject["B"]}
           FetchImageFunction={FetchImageFunction}
         />
       </div>
 
-      <div className="projectDiv Card3">
+      <div
+        className="projectDiv"
+        id="Card3"
+        onClick={() => cardClickedEvent(CardIDRandomObject["C"])}
+      >
         <Card
           CardId={CardIDRandomObject["C"]}
           FetchImageFunction={FetchImageFunction}
         />
       </div>
 
-      <div className="projectDiv Card4">
+      <div
+        className="projectDiv"
+        id="Card4"
+        onClick={() => cardClickedEvent(CardIDRandomObject["D"])}
+      >
         <Card
           CardId={CardIDRandomObject["D"]}
           FetchImageFunction={FetchImageFunction}
         />
       </div>
 
-      <div className="projectDiv Card5">
+      <div
+        className="projectDiv"
+        id="Card5"
+        onClick={() => cardClickedEvent(CardIDRandomObject["E"])}
+      >
         <Card
           CardId={CardIDRandomObject["E"]}
           FetchImageFunction={FetchImageFunction}
         />
+        {/* 
+        { ()=>detectClicks()
+        } */}
       </div>
     </div>
   );
