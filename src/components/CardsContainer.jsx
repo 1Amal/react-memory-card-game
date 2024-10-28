@@ -25,7 +25,7 @@ export default function CardsContainer({
       console.log("Warning Duplicate Entry found !");
       console.log(scoreBoardObject);
 
-      if (currentScore > bestScore) {
+      if (currentScore >= bestScore) {
         bestScore = currentScore;
         currentScore = 0;
 
@@ -34,20 +34,27 @@ export default function CardsContainer({
           bestScore: bestScore,
           currentScore: currentScore,
         });
-        setUserSelectionArray(
-          ...userSelectionArray,
-          (userSelectionArray.length = 0)
-        );
       }
-
-      // setScoreBoardObject({
-      //   ...scoreBoardObject,
-      //   currentScore: currentScore,
-      // });
+      setUserSelectionArray(
+        ...userSelectionArray,
+        (userSelectionArray.length = 0)
+      );
     } else if (!checkForRepeatSelection) {
       console.log("No Duplicates Found!");
-      currentScore++;
-      setScoreBoardObject({ ...scoreBoardObject, currentScore: currentScore });
+
+      if (currentScore < 6) {
+        currentScore++;
+        setScoreBoardObject({
+          ...scoreBoardObject,
+          currentScore: currentScore,
+        });
+      } else {
+        currentScore = 0;
+        // setUserSelectionArray(
+        //   ...userSelectionArray,
+        //   (userSelectionArray.length = 0)
+        // );
+      }
     }
     // console.log(checkForRepeatSelection)
     userSelectionArray.push(cardName);
