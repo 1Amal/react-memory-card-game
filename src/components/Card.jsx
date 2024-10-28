@@ -53,7 +53,7 @@ export default function Card({ FetchImageFunction, CardId }) {
       />
 
       <h2>{giphyImageIDObject[CardId]["imageName"]}</h2>
-      {console.dir(CardId)}
+      {/* {console.dir(CardId)} */}
     </div>
   );
 }

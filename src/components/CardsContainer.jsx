@@ -1,7 +1,11 @@
 import Card from "./Card";
 import { useState } from "react";
 
-export default function CardsContainer({ FetchImageFunction }) {
+export default function CardsContainer({
+  FetchImageFunction,
+  setScoreBoardObject,
+  scoreBoardObject,
+}) {
   const [CardIDRandomObject, setCardIDRandomObject] = useState({
     A: 0,
     B: 1,
@@ -10,9 +14,46 @@ export default function CardsContainer({ FetchImageFunction }) {
     E: 4,
   });
 
+  const [userSelectionArray, setUserSelectionArray] = useState([]);
+
+  let currentScore = scoreBoardObject.currentScore;
+  let bestScore = scoreBoardObject.bestScore;
+
   function cardClickedEvent(cardName) {
-    // document.querySelector("#Card1").addEventListener("click", alert("Clicked"));
-    alert(cardName);
+    let checkForRepeatSelection = userSelectionArray.includes(cardName);
+    if (checkForRepeatSelection) {
+      console.log("Warning Duplicate Entry found !");
+      console.log(scoreBoardObject);
+
+      if (currentScore > bestScore) {
+        bestScore = currentScore;
+        currentScore = 0;
+
+        setScoreBoardObject({
+          ...scoreBoardObject,
+          bestScore: bestScore,
+          currentScore: currentScore,
+        });
+        setUserSelectionArray(
+          ...userSelectionArray,
+          (userSelectionArray.length = 0)
+        );
+      }
+
+      // setScoreBoardObject({
+      //   ...scoreBoardObject,
+      //   currentScore: currentScore,
+      // });
+    } else if (!checkForRepeatSelection) {
+      console.log("No Duplicates Found!");
+      currentScore++;
+      setScoreBoardObject({ ...scoreBoardObject, currentScore: currentScore });
+    }
+    // console.log(checkForRepeatSelection)
+    userSelectionArray.push(cardName);
+    setUserSelectionArray(userSelectionArray);
+    console.log(userSelectionArray);
+
     randomCardSelection();
   }
 
@@ -42,8 +83,8 @@ export default function CardsContainer({ FetchImageFunction }) {
         A: 2,
         B: 3,
         C: 4,
-        D: 1,
-        E: 2,
+        D: 0,
+        E: 1,
       });
     } else if (randomNumber == 4) {
       setCardIDRandomObject({

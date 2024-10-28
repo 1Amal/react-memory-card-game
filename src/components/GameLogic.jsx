@@ -11,8 +11,10 @@ import Card from "./Card.jsx";
 export default function GameLogic() {
   const [fetchedImage, setFetchedImage] = useState("");
 
-  const scoreBoardObject = [{ currentScore: "" }, { bestScore: "" }];
-  const userSelectionObject = ["firstClickID", "SecondClick"];
+  const [scoreBoardObject,setScoreBoardObject]=useState({currentScore:0,bestScore:0});
+  
+
+ 
 
   async function FetchImage(imageRequired) {
     let imageID = "kH1DBkPNyZPOk0BxrM";
@@ -37,14 +39,14 @@ export default function GameLogic() {
   }
   return (
     <div>
-      <h1>Game Logic Component</h1>
+      {/* <h1>Game Logic Component</h1> */}
 
       {/* <button onClick={() => FetchImage()}>Fetch Image</button>
       <img src={fetchedImage} alt="Fetched Image" />  */}
 
-      <ScoreBoard currentScore={1} />
+      <ScoreBoard scoreBoardObject={scoreBoardObject} />
       <Introduction />
-      <CardsContainer FetchImageFunction={FetchImage} />
+      <CardsContainer FetchImageFunction={FetchImage} scoreBoardObject={scoreBoardObject} setScoreBoardObject={setScoreBoardObject}/>
     </div>
   );
 }
