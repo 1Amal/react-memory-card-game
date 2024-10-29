@@ -4,12 +4,9 @@ import ScoreBoard from "./ScoreBoard.jsx";
 import Introduction from "./Introduction.jsx";
 import CardsContainer from "./CardsContainer.jsx";
 import Card from "./Card.jsx";
-// import App from "./App.jsx";
-
-// import {main} from './Main'
 
 export default function GameLogic() {
-  const [requiredImageId,setRequiredImageId]=useState("eNAsjO55tPbgaor7ma")
+  const [requiredImageId, setRequiredImageId] = useState("fsEaZldNC8A1PJ3mwp");
   const [fetchedImage, setFetchedImage] = useState("");
 
   const [scoreBoardObject, setScoreBoardObject] = useState({
@@ -33,14 +30,14 @@ export default function GameLogic() {
       .then(function (response) {
         returnedImageURL = response.data.images.downsized_medium.url;
         setFetchedImage(returnedImageURL);
-
       })
       .catch(function (err) {
         console.log(err);
       });
+      return (FetchImage("kH1DBkPNyZPOk0BxrM"))
   }, []);
 
-  async function FetchImage(imageRequired) {
+  function FetchImage(imageRequired) {
     setRequiredImageId(imageRequired);
   }
 
@@ -48,7 +45,9 @@ export default function GameLogic() {
     <div>
       <h1>Game Logic Component</h1>
 
-      <button onClick={() => FetchImage()}>Fetch Image</button>
+      <button onClick={() => FetchImage("fsEaZldNC8A1PJ3mwp")}>
+        Fetch Image
+      </button>
       <img src={fetchedImage} alt="Fetched Image" />
 
       <ScoreBoard scoreBoardObject={scoreBoardObject} />
