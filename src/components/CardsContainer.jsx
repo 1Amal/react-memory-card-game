@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function CardsContainer({
   FetchImageFunction,
+  fetchedImage,
   setScoreBoardObject,
   scoreBoardObject,
 }) {
@@ -20,6 +21,7 @@ export default function CardsContainer({
   let bestScore = scoreBoardObject.bestScore;
 
   function cardClickedEvent(cardName) {
+    console.log(fetchedImage);
     let checkForRepeatSelection = userSelectionArray.includes(cardName);
     if (checkForRepeatSelection) {
       console.log("Warning Duplicate Entry found !");
@@ -115,8 +117,9 @@ export default function CardsContainer({
   }
   return (
     <div className="projectsContainer">
-      <button onClick={() => randomCardSelection()}>Change Cards</button>
+      {/* <button onClick={() => randomCardSelection()}>Change Cards</button> */}
       {/* <h1>{randomNumber}</h1> */}
+      <button onClick={()=>FetchImageFunction("kH1DBkPNyZPOk0BxrM")}>Change Image URL</button>
       <div
         className="projectDiv"
         id="Card1"
