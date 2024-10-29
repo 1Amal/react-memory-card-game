@@ -1,8 +1,9 @@
 import { useState } from "react";
-export default function Card({ FetchImageFunction, CardId }) {
-  const [fetchedImage, setFetchedImage] = useState("");
+export default function Card({ FetchImageFunction, CardId, fetchedImage }) {
+  
+  // const [fetchedImage, setFetchedImage] = useState("");
 
-  const giphyImageIDObject = [
+  const [giphyImageIDObject,setGiphyFetchedURL]=useState([
     {
       giphyImageId: "ln7z2eWriiQAllfVcn",
       imageName: "JavaScript",
@@ -38,16 +39,29 @@ export default function Card({ FetchImageFunction, CardId }) {
         "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzJuZjV1Y3lxcTgzNjY3ZnBudjdmaTE1ZmlyMTZ1MWR3cnB6cjA2eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kH1DBkPNyZPOk0BxrM/giphy.webp",
       giphyFetchedURL: "",
     },
-  ];
+  ])
 
-  //   const imageUrl = () => FetchImageFunction("fsEaZldNC8A1PJ3mwp");
-  //   ;
+  
+
+   function getGiphyImageURL(selectedCard) {
+    FetchImageFunction(selectedCard);
+    setGiphyFetchedURL(giphyImageIDObject[CardId]["giphyFetchedURL"]=fetchedImage);
+    console.log(giphyImageIDObject);
+    // console.log(fetchedImage)
+
+  }
+  // getGiphyImageURL();
+  let selectedCard=giphyImageIDObject[CardId]["giphyImageId"]
+  
 
   return (
     <div>
+      
+      <button onClick={()=>{getGiphyImageURL()}}>Call Giphy Image</button>
       <img
         id={giphyImageIDObject[CardId]["giphyImageId"]}
-        src={giphyImageIDObject[CardId]["backupURL"]}
+        // src={giphyImageIDObject[CardId]["backupURL"]}
+        src={giphyImageIDObject[CardId]["giphyFetchedURL"]}
         alt={giphyImageIDObject[CardId]["imageName"]}
         className="imageSize"
       />

@@ -25,17 +25,19 @@ export default function GameLogic() {
       }
     )
       .then(function (response) {
+        console.log(response)
         return response.json();
       })
       .then(function (response) {
         returnedImageURL = response.data.images.downsized_medium.url;
         setFetchedImage(returnedImageURL);
+        
       })
       .catch(function (err) {
         console.log(err);
       });
-      return (FetchImage("kH1DBkPNyZPOk0BxrM"))
-  }, []);
+      // return (FetchImage(""))
+  }, [requiredImageId]);
 
   function FetchImage(imageRequired) {
     setRequiredImageId(imageRequired);
@@ -43,12 +45,12 @@ export default function GameLogic() {
 
   return (
     <div>
-      <h1>Game Logic Component</h1>
+      {/* <h1>Game Logic Component</h1> */}
 
-      <button onClick={() => FetchImage("fsEaZldNC8A1PJ3mwp")}>
+      {/* <button onClick={() => FetchImage("fsEaZldNC8A1PJ3mwp")}>
         Fetch Image
-      </button>
-      <img src={fetchedImage} alt="Fetched Image" />
+      </button> */}
+      {/* <img src={fetchedImage} alt="Fetched Image" /> */}
 
       <ScoreBoard scoreBoardObject={scoreBoardObject} />
       <Introduction />

@@ -21,7 +21,7 @@ export default function CardsContainer({
   let bestScore = scoreBoardObject.bestScore;
 
   function cardClickedEvent(cardName) {
-    console.log(fetchedImage);
+    // console.log(fetchedImage);
     let checkForRepeatSelection = userSelectionArray.includes(cardName);
     if (checkForRepeatSelection) {
       console.log("Warning Duplicate Entry found !");
@@ -119,7 +119,9 @@ export default function CardsContainer({
     <div className="projectsContainer">
       {/* <button onClick={() => randomCardSelection()}>Change Cards</button> */}
       {/* <h1>{randomNumber}</h1> */}
-      <button onClick={()=>FetchImageFunction("fsEaZldNC8A1PJ3mwp")}>Change Image URL</button>
+      <button onClick={() => FetchImageFunction("XAxylRMCdpbEWUAvr8")}>
+        Change Image URL
+      </button>
       <div
         className="projectDiv"
         id="Card1"
@@ -128,6 +130,7 @@ export default function CardsContainer({
         <Card
           CardId={CardIDRandomObject["A"]}
           FetchImageFunction={FetchImageFunction}
+          fetchedImage={fetchedImage}
         />
       </div>
 
@@ -139,6 +142,7 @@ export default function CardsContainer({
         <Card
           CardId={CardIDRandomObject["B"]}
           FetchImageFunction={FetchImageFunction}
+          fetchedImage={fetchedImage}
         />
       </div>
 
@@ -150,6 +154,7 @@ export default function CardsContainer({
         <Card
           CardId={CardIDRandomObject["C"]}
           FetchImageFunction={FetchImageFunction}
+          fetchedImage={fetchedImage}
         />
       </div>
 
@@ -161,6 +166,7 @@ export default function CardsContainer({
         <Card
           CardId={CardIDRandomObject["D"]}
           FetchImageFunction={FetchImageFunction}
+          fetchedImage={fetchedImage}
         />
       </div>
 
@@ -172,10 +178,8 @@ export default function CardsContainer({
         <Card
           CardId={CardIDRandomObject["E"]}
           FetchImageFunction={FetchImageFunction}
+          fetchedImage={fetchedImage}
         />
-        {/* 
-        { ()=>detectClicks()
-        } */}
       </div>
     </div>
   );
