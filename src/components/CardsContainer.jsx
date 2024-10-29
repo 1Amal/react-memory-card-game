@@ -2,6 +2,7 @@ import Card from "./Card";
 import { useState } from "react";
 
 export default function CardsContainer({
+  giphyImageIDObject,
   FetchImageFunction,
   fetchedImage,
   setScoreBoardObject,
@@ -128,6 +129,7 @@ export default function CardsContainer({
         onClick={() => cardClickedEvent(CardIDRandomObject["A"])}
       >
         <Card
+          giphyImageIDObject={giphyImageIDObject}
           CardId={CardIDRandomObject["A"]}
           FetchImageFunction={FetchImageFunction}
           fetchedImage={fetchedImage}
@@ -140,6 +142,7 @@ export default function CardsContainer({
         onClick={() => cardClickedEvent(CardIDRandomObject["B"])}
       >
         <Card
+          giphyImageIDObject={giphyImageIDObject}
           CardId={CardIDRandomObject["B"]}
           FetchImageFunction={FetchImageFunction}
           fetchedImage={fetchedImage}
@@ -152,6 +155,7 @@ export default function CardsContainer({
         onClick={() => cardClickedEvent(CardIDRandomObject["C"])}
       >
         <Card
+          giphyImageIDObject={giphyImageIDObject}
           CardId={CardIDRandomObject["C"]}
           FetchImageFunction={FetchImageFunction}
           fetchedImage={fetchedImage}
@@ -164,6 +168,7 @@ export default function CardsContainer({
         onClick={() => cardClickedEvent(CardIDRandomObject["D"])}
       >
         <Card
+          giphyImageIDObject={giphyImageIDObject}
           CardId={CardIDRandomObject["D"]}
           FetchImageFunction={FetchImageFunction}
           fetchedImage={fetchedImage}
@@ -176,6 +181,7 @@ export default function CardsContainer({
         onClick={() => cardClickedEvent(CardIDRandomObject["E"])}
       >
         <Card
+          giphyImageIDObject={giphyImageIDObject}
           CardId={CardIDRandomObject["E"]}
           FetchImageFunction={FetchImageFunction}
           fetchedImage={fetchedImage}
