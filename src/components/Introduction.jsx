@@ -5,10 +5,10 @@ export default function Introduction() {
     <div className="introductionContainer">
       <h2>Memory Game</h2>
       <h3>
-        This React (JavaScript, CSS, HTML, Vite, Flexbox, Netlify) based
-        interactive memory game allows players to select cards displaying images
-        from Giphy. The game tracks the current score and the highest score
-        achieved, with cards shuffling randomly with each click.
+        This React based (JavaScript, CSS/Flexbox, HTML, Vite, Netlify CI/CD,
+        Git) interactive memory game allows players to select cards displaying
+        images from Giphy. The game tracks the current score and the highest
+        score achieved, with cards shuffling randomly with each click.
       </h3>
       <h3>
         Instructions: Get points by clicking on an image but don't click on any

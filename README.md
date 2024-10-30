@@ -1,11 +1,13 @@
 # Memory Card Game
 
-This React-based interactive memory card game allows players to match pairs of cards displaying images and text from an external API. The game tracks the current score and the highest score achieved, with cards shuffling randomly each time one is clicked for a fresh experience.
+This React based (JavaScript, CSS/Flexbox, HTML, Vite, Netlify CI/CD, Git)
+interactive memory game allows players to select cards displaying images
+from Giphy. The game tracks the current score and the highest score
+achieved, with cards shuffling randomly with each click.
 
 ## Features
 
-- Match pairs of cards.
-- Display images and text fetched from an external API.
+- React based (JavaScript, CSS/Flexbox, HTML, Vite, Netlify CI/CD, Git)
 - Track current score and highest score.
 - Shuffle cards randomly on each click.
 
@@ -13,8 +15,10 @@ This React-based interactive memory card game allows players to match pairs of c
 
 - React / JavaScript
 - HTML
-- CSS
+- CSS / Flexbox
 - Vite
+- Netlify CI/CD
+- Git
 
 ### Live Preview
 
@@ -40,14 +44,13 @@ Make sure you have the following installed on your Ubuntu system:
 
    Open your terminal and run:
 
-````
+```
 
 git clone git@github.com:1Amal/react-memory-card-game.git
-   
-````
+
+```
 
 2. **Install dependencies**
-
 
 ```
 npm install
@@ -58,5 +61,3 @@ npm install
 ```
 npm run dev
 ```
-
-
