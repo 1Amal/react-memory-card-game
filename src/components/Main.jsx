@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
 
 // No of Memory Cards: 5, use Giphy API to download the following images
 // CSS: https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmcwZHU0YWR0eWM0anIwenp3ZTRpc2FwZHBrYnlhZzJ5dTFqbjhzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13FrpeVH09Zrb2/giphy.gif
-//Android:
+//Git:
 //JavaScript:
 //HTML:
 //React:
@@ -199,9 +199,7 @@ useEffect: Used when Giphy API calls are made
 
                 }
 
-
       />
-
 
 
 <ScoreBoard-Component
@@ -211,9 +209,7 @@ useEffect: Used when Giphy API calls are made
     return {scoreUpdate.highestScore} {scoreUpdate.currentScore}
 
     }
-
      
 />
-
 
 */

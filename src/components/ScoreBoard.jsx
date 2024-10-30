@@ -1,5 +1,3 @@
-import "../styles/main-style-sheet.css";
-
 export default function ScoreBoard({ scoreBoardObject }) {
   return (
     <div className="gameScore">

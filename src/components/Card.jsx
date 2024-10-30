@@ -1,4 +1,3 @@
-import { useState } from "react";
 export default function Card({ CardId, fetchedImage, giphyImageIDObject }) {
   return (
     <div>
