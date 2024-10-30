@@ -3,16 +3,16 @@ import "../styles/main-style-sheet.css";
 export default function Introduction() {
   return (
     <div className="introductionContainer">
-      <h2>Welcome To Memory Card Game</h2>
+      <h2>Memory Game</h2>
       <h3>
-        This React-based interactive memory card game allows players to match
-        pairs of cards displaying images from Giphy. The game tracks the current
-        score and the highest score achieved, with cards shuffling randomly each
-        time one is clicked for a fresh experience.
+        This React (JavaScript, CSS, HTML, Vite, Flexbox, Netlify) based
+        interactive memory game allows players to select cards displaying images
+        from Giphy. The game tracks the current score and the highest score
+        achieved, with cards shuffling randomly with each click.
       </h3>
       <h3>
         Instructions: Get points by clicking on an image but don't click on any
-        more than once!{" "}
+        image more than once!{" "}
       </h3>
       <h3>
         {" "}
