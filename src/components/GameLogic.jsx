@@ -3,20 +3,18 @@ import { useState, useEffect } from "react";
 import ScoreBoard from "./ScoreBoard.jsx";
 import Introduction from "./Introduction.jsx";
 import CardsContainer from "./CardsContainer.jsx";
-import Card from "./Card.jsx";
 
 export default function GameLogic() {
-  const [requiredImageId, setRequiredImageId] = useState("fsEaZldNC8A1PJ3mwp");
+  // const [requiredImageId, setRequiredImageId] = useState("fsEaZldNC8A1PJ3mwp");
   const [fetchedImage, setFetchedImage] = useState("");
 
   const [scoreBoardObject, setScoreBoardObject] = useState({
     currentScore: 0,
     bestScore: 0,
   });
-  let returnedImageURL;
+  // let returnedImageURL;
 
-
-  const [giphyImageIDObject,setGiphyFetchedURL]=useState([
+  const [giphyImageIDObject, setGiphyImageIDObject] = useState([
     {
       giphyImageId: "ln7z2eWriiQAllfVcn",
       imageName: "JavaScript",
@@ -54,59 +52,37 @@ export default function GameLogic() {
     },
   ]);
 
-  function getGiphyImageURL(selectedCard) {
-    FetchImageFunction(selectedCard);
-    setGiphyFetchedURL(giphyImageIDObject[CardId]["giphyFetchedURL"]=fetchedImage);
-    console.log(giphyImageIDObject);
-    // console.log(fetchedImage)
+  // Following function has been disabled as decided to move on with static URL's from Giphy
+  // useEffect(() => {
+  //   let imageID = requiredImageId;
 
-  }
-  // getGiphyImageURL();
-  // let selectedCard=giphyImageIDObject[CardId]["giphyImageId"]
+  //   fetch(
+  //     `https://api.giphy.com/v1/gifs/${imageID}?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&rating=g`,
+  //     {
+  //       mode: "cors",
+  //     }
+  //   )
+  //     .then(function (response) {
+  //       console.log(response);
+  //       return response.json();
+  //     })
+  //     .then(function (response) {
+  //       returnedImageURL = response.data.images.downsized_medium.url;
+  //       setFetchedImage(returnedImageURL);
 
+  //     })
+  //     .catch(function (err) {
+  //       console.log(err);
+  //     });
 
-  useEffect(() => {
-    let imageID = requiredImageId;
-
-    fetch(
-      `https://api.giphy.com/v1/gifs/${imageID}?api_key=il0jSOJwebRzCIT6pUUgIfQBOZjvpotK&rating=g`,
-      {
-        mode: "cors",
-      }
-    )
-      .then(function (response) {
-        console.log(response)
-        return response.json();
-      })
-      .then(function (response) {
-        returnedImageURL = response.data.images.downsized_medium.url;
-        setFetchedImage(returnedImageURL);
-        
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-      // return (FetchImage(""))
-  }, [requiredImageId]);
-
-  function FetchImage(imageRequired) {
-    setRequiredImageId(imageRequired);
-  }
+  // }, [requiredImageId]);
 
   return (
     <div>
-      {/* <h1>Game Logic Component</h1> */}
-
-      {/* <button onClick={() => FetchImage("fsEaZldNC8A1PJ3mwp")}>
-        Fetch Image
-      </button> */}
-      {/* <img src={fetchedImage} alt="Fetched Image" /> */}
-
       <ScoreBoard scoreBoardObject={scoreBoardObject} />
       <Introduction />
       <CardsContainer
         giphyImageIDObject={giphyImageIDObject}
-        FetchImageFunction={FetchImage}
         fetchedImage={fetchedImage}
         scoreBoardObject={scoreBoardObject}
         setScoreBoardObject={setScoreBoardObject}

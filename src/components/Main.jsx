@@ -1,12 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-// import './index.css'
-
-import ScoreBoard from "./ScoreBoard.jsx";
-import Introduction from "./Introduction.jsx";
-import CardsContainer from "./CardsContainer.jsx";
-import GameLogic from "./GameLogic.jsx";
 import App from "./App.jsx";
 
 import "../styles/main-style-sheet.css";
@@ -154,9 +148,6 @@ useEffect: Used when Giphy API calls are made
                      
                   RETURN CardOrder(Number between 0 and 4)
               }
-
-
-
 
           IF CardOrder=0
             THEN
