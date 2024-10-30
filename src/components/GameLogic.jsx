@@ -79,8 +79,8 @@ export default function GameLogic() {
 
   return (
     <div>
-      <ScoreBoard scoreBoardObject={scoreBoardObject} />
       <Introduction />
+      <ScoreBoard scoreBoardObject={scoreBoardObject} />
       <CardsContainer
         giphyImageIDObject={giphyImageIDObject}
         fetchedImage={fetchedImage}
